@@ -1,12 +1,7 @@
 -module(one_two).
 
--domain(public).
+-export([one_two_fun/0]).
 
--private([some_function/1]).
-
--export([one_two_fun/1]).
-
--spec one() -> string().
 one_two_fun() ->
   ok.
 

@@ -5,9 +5,9 @@
 -export([one/0]).
 
 one(Foo) ->
-  case one_two:one_fun() of
+  case one_two:one_two_fun() of
     Foo -> ok;
-    _   -> error(foo)
+    _   -> error(oo)
   end,
   two:two_fun(),
   some_function("hello world!").
