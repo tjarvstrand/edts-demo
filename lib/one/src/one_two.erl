@@ -1,9 +1,9 @@
 -module(one_two).
 
--export([one_two_fun/0]).
+-export([one_two_fun/1]).
 
-one_two_fun() ->
-  ok.
+one_two_fun(ok) ->
+  two:two_fun().
 
 %%%_* Emacs ====================================================================
 %%% Local Variables:
