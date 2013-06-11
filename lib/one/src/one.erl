@@ -1,9 +1,11 @@
 -module(one).
 
+-include_lib("eunit/include/eunit.hrl").
 -include_lib("one/include/test.hrl").
 
 -export([one/0]).
 
+-spec one(any()) -> string().
 one(Foo) ->
   case one_two:one_two_fun() of
     Foo -> ok;
