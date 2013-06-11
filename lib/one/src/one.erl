@@ -3,12 +3,17 @@
 -include_lib("eunit/include/eunit.hrl").
 -include_lib("one/include/test.hrl").
 
--export([one/0]).
+-export([one/1]).
+
+-record(record, {field}).
+
+-define(macro_ok, ok).
 
 -spec one(any()) -> string().
 one(Foo) ->
+  lists:keymap(fo, bar, a),
   case one_two:one_two_fun() of
-    Foo -> ok;
+    Foo -> ?macro_ok;
     _   -> error(oo)
   end,
   two:two_fun(),
@@ -17,7 +22,7 @@ one(Foo) ->
 
 -spec some_function(string()) -> atom().
 some_function(Foo) ->
-  list_to_atom(Foo).
+  #record{field = list_to_atom(Foo)}.
 
 %%%_* Emacs ====================================================================
 %%% Local Variables:
